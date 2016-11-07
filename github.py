@@ -24,11 +24,9 @@ def set_labels(labels):
     try:
       # Label was in the list, we update GH
       labels.remove(label['name'])
-      print '%s was in the array' % label['name']
       update_label(label)
     except ValueError:
       # Label wasn't in the array, we add it to GH
-      print '%s was NOT in the array' % label['name']
       create_label(label)
 
   # We now remove the labels left
