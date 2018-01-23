@@ -1,8 +1,14 @@
 import json
 import requests
 import yaml
+import os
 
-token = raw_input('Paste your GitHub token? (see https://github.com/settings/tokens): ')
+envToken = os.environ['GITHUB_TOKEN']
+
+token = ''
+if envToken == '':
+    token = raw_input('Paste your GitHub token? (see https://github.com/settings/tokens): ')
+    pass
 repo = raw_input('Which repo do you want to setup? (e.g. Wiredcraft/test): ')
 
 with open('labels.yml', 'r') as f:
