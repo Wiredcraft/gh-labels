@@ -3,10 +3,8 @@ import requests
 import yaml
 import os
 
-envToken = os.environ['GITHUB_TOKEN']
-
-token = ''
-if envToken == '':
+token = os.environ.get('GITHUB_TOKEN')
+if token == '':
     token = raw_input('Paste your GitHub token? (see https://github.com/settings/tokens): ')
     pass
 repo = raw_input('Which repo do you want to setup? (e.g. Wiredcraft/test): ')
